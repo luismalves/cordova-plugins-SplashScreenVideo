@@ -17,7 +17,7 @@ bool shouldHideStatusBar = YES;
     return shouldHideStatusBar;
 }
 
-- (UIStatusBarStyle)preferredStatusBarStyle {
+/**- (UIStatusBarStyle)preferredStatusBarStyle {
     bool darkStatusBar;
     NSString *darkStatusBarStr = self.commandDelegate.settings[@"dark_statusbar"];
     if (darkStatusBarStr == nil) {
@@ -31,7 +31,7 @@ bool shouldHideStatusBar = YES;
     } else {
         return UIStatusBarStyleLightContent;
     }
-}
+}*/
 
 - (void)setPlayerViewController:(AVPlayerViewController *)playerViewController
 {
