@@ -32,7 +32,9 @@ public class VideoDialogFragment extends DialogFragment {
         Uri videoUri = Uri.parse("android.resource://" + getActivity().getPackageName() + "/" + R.raw.splashscreen);
         MediaItem mediaItem = MediaItem.fromUri(videoUri);
         player.setMediaItem(mediaItem);
+        player.setVolume(0f);
         player.prepare();
+
         player.play();
 
         player.addListener(new Player.Listener() {
