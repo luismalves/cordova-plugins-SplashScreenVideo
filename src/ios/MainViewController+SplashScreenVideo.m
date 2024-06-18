@@ -94,7 +94,7 @@ AVPlayerViewController *playerViewController;
     AVPlayer* playVideo = [[AVPlayer alloc] initWithPlayerItem:playerItem];
     playVideo.allowsExternalPlayback = NO;
     playVideo.usesExternalPlaybackWhileExternalScreenIsActive = NO;
-    77playVideo.isMuted = true;
+    //playVideo.isMuted = true;
     self.playerViewController = [[AVPlayerViewController alloc] init];
     self.playerViewController.showsPlaybackControls = false;
     self.playerViewController.player = playVideo;
