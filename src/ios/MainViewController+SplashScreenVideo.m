@@ -90,16 +90,25 @@ AVPlayerViewController *playerViewController;
         return;
     }
 
+    // Allow background audio to continue playing
+    NSError *error;
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryAmbient error:&error];
+
+    if (error) {
+    NSLog(@"Error setting audio session category: %@", error.localizedDescription);
+    // Handle the error appropriately
+    }
+
     AVPlayerItem* playerItem = [AVPlayerItem playerItemWithURL:videoURL];
     AVPlayer* playVideo = [[AVPlayer alloc] initWithPlayerItem:playerItem];
     playVideo.allowsExternalPlayback = NO;
     playVideo.usesExternalPlaybackWhileExternalScreenIsActive = NO;
-    //playVideo.isMuted = true;
+    playVideo.muted = YES;
     self.playerViewController = [[AVPlayerViewController alloc] init];
     self.playerViewController.showsPlaybackControls = false;
     self.playerViewController.player = playVideo;
     //self.playerViewController.player.volume = 0;
-    self.playerViewController.player.muted = true;
+    //self.playerViewController.player.muted = true;
     self.playerViewController.view.frame = self.view.bounds;
     self.playerViewController.videoGravity = AVLayerVideoGravityResizeAspectFill;
     
