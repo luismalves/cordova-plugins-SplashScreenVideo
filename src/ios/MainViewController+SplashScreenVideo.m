@@ -94,12 +94,12 @@ AVPlayerViewController *playerViewController;
     AVPlayer* playVideo = [[AVPlayer alloc] initWithPlayerItem:playerItem];
     playVideo.allowsExternalPlayback = NO;
     playVideo.usesExternalPlaybackWhileExternalScreenIsActive = NO;
-    playVideo.isMuted = true;
+    77playVideo.isMuted = true;
     self.playerViewController = [[AVPlayerViewController alloc] init];
     self.playerViewController.showsPlaybackControls = false;
     self.playerViewController.player = playVideo;
-    self.playerViewController.player.volume = 0;
-    //self.playerViewController.player.isMuted = true;
+    //self.playerViewController.player.volume = 0;
+    self.playerViewController.player.muted = true;
     self.playerViewController.view.frame = self.view.bounds;
     self.playerViewController.videoGravity = AVLayerVideoGravityResizeAspectFill;
     
